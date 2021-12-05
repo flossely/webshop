@@ -1,1 +1,1 @@
-Webshop Update=||=sys.upd.png=||=get('i', 'from', 'webshop', 'webfloss');
+Webshop Update=||=sys.upd.png=||=get('i', 'from', 'webshop', 'flossely');
