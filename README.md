@@ -1,2 +1,2 @@
-# webshop
-A tried-and-tested web desktop environment with simple design.
+# Webshop
+A tried-and-tested web desktop environment with simple design. Clone this repository on your web server directory and start hosting it in order for other users to access it through the web browser.
