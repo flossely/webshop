@@ -131,6 +131,7 @@ input, select {
 }
 </style>
 <script src="jquery.js"></script>
+<script src="base.js"></script>
 <script src="sort.js"></script>
 <script src="http://www.midijs.net/lib/midi.js"></script>
 <script>
@@ -165,20 +166,6 @@ function del(name) {
         }
     }
     xmlhttp.open("POST","delete.php?name="+name,false);
-    xmlhttp.send();
-}
-function get(key, pkg, repo, user) {
-    if (window.XMLHttpRequest) {
-        xmlhttp=new XMLHttpRequest();
-    } else {
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function() {
-        if (this.readyState==4 && this.status==200) {
-            document.location.reload();
-        }
-    }
-    xmlhttp.open("GET","get.php?key="+key+"&pkg="+pkg+"&repo="+repo+"&user="+user,false);
     xmlhttp.send();
 }
 function playAudio(name) {

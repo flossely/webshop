@@ -71,6 +71,7 @@ input {
 }
 </style>
 <script src="jquery.js"></script>
+<script src="base.js"></script>
 <script>
 function set(name, content) {
     var dataString = 'name=' + name + '&content=' + content;

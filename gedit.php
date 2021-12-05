@@ -83,6 +83,7 @@ input, select, textarea {
 }
 </style>
 <script src="jquery.js"></script>
+<script src="base.js"></script>
 <script src="edit.js"></script>
 </head>
 <body onload="countText();">
