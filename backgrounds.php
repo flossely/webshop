@@ -78,7 +78,8 @@ input, select {
 .actionButtonGreen {
     background-color: #009f4b;
     color: #fff;
-    font-size: 14pt;
+    font-size: 16pt;
+    width: 27px;
     font-weight: bold;
     position: relative;
 }
