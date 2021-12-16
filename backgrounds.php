@@ -75,6 +75,16 @@ input, select {
 .actionButtonRed:hover {
     opacity: 0.7;
 }
+.actionButtonGreen {
+    background-color: #009f4b;
+    color: #fff;
+    font-size: 14pt;
+    font-weight: bold;
+    position: relative;
+}
+.actionButtonGreen:hover {
+    opacity: 0.7;
+}
 .actionButtonYellow {
     background-color: #ddab00;
     color: #fff;
