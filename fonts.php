@@ -8,62 +8,7 @@ $name = $_REQUEST['name'];
 <meta charset="UTF-8">
 <title>Font Viewer</title>
 <link rel="shortcut icon" href="sys.fon.png?rev=<?=time();?>" type="image/x-icon">
-<style>
-@font-face {
-    font-family: "userdefine";
-    src: url("<?=$name;?>");
-}
-body {
-    background-color: #e4e4e4;
-    background-image: url(<?=$background;?>);
-    background-size: auto 100vh;
-    background-repeat: no-repeat;
-    color: #000;
-    font-family: "userdefine";
-    font-size: 14pt;
-}
-.userDefine {
-    font-family: "userdefine";
-    font-size: 20pt;
-}
-.top {
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 3px;
-    opacity: 0.75;
-    position: absolute;
-    width: 92%;
-    height: 13%;
-    top: 4%;
-    left: 4%;
-}
-.panel {
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 3px;
-    opacity: 0.75;
-    position: absolute;
-    width: 92%;
-    height: 77%;
-    top: 17%;
-    left: 4%;
-    overflow-y: scroll;
-}
-.actionButtonRed {
-    background-color: #d83d48;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    width: 27px;
-    font-family: "userdefine";
-    font-weight: bold;
-    font-size: 16pt;
-    position: relative;
-}
-.actionButtonRed:hover {
-    opacity: 0.7;
-}
-</style>
+<?php include 'appstyle.php'; ?>
 </head>
 <body>
 <div class='top'>

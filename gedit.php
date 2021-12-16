@@ -12,76 +12,7 @@ if ($lock != 'true') {
 <meta charset="UTF-8">
 <title>Text Editor</title>
 <link rel="shortcut icon" href="sys.edit.png?rev=<?=time();?>" type="image/x-icon">
-<style>
-@font-face {
-    font-family: "ubuntu";
-    src: url("ubuntu.ttf");
-}
-body {
-    background-color: #e4e4e4;
-    background-image: url(<?=$background;?>);
-    background-size: auto 100vh;
-    background-repeat: no-repeat;
-    color: #000;
-    font-family: "ubuntu";
-    font-size: 14pt;
-}
-a, p, table, tr, td, th {
-    background-color: #dcdad5;
-    color: #000;
-    font-family: "ubuntu";
-    font-size: 14pt;
-    text-align: center;
-}
-input, select, textarea {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 3px;
-    position: relative;
-    font-family: "ubuntu";
-    font-size: 14pt;
-}
-.top {
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 3px;
-    opacity: 0.75;
-    position: absolute;
-    width: 92%;
-    height: 13%;
-    top: 4%;
-    left: 4%;
-}
-.panel {
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 3px;
-    opacity: 0.75;
-    position: absolute;
-    width: 92%;
-    height: 77%;
-    top: 17%;
-    left: 4%;
-    overflow-y: scroll;
-}
-.actionIcon {
-    height: 92%;
-    position: relative;
-}
-.actionIcon:hover {
-    opacity: 0.7;
-}
-.actionButtonGreen {
-    background-color: #009f4b;
-    color: #fff;
-    font-size: 16pt;
-    position: relative;
-}
-.actionButtonGreen:hover {
-    opacity: 0.7;
-}
-</style>
+<?php include 'appstyle.php'; ?>
 <script src="jquery.js"></script>
 <script src="base.js"></script>
 <script src="edit.js"></script>
