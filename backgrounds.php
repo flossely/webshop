@@ -2,6 +2,11 @@
 $background = file_get_contents('background');
 $dir = '.';
 $lock = ($_REQUEST['lock']) ? $_REQUEST['lock'] : 'true';
+if ($lock == 'true') {
+    $lockInv = 'false';
+} elseif ($lock == 'false') {
+    $lockInv = 'true';
+}
 $list = str_replace($dir.'/','',(glob($dir.'/back.*.png')));
 ?>
 <html>
@@ -113,6 +118,7 @@ foreach ($list as $key=>$value) {
 <?php } ?>
 </select>
 <input type="button" class="actionButtonYellow" onclick="set('background', '<?=$list[0];?>');" value="<">
+<input type="button" class="actionButtonYellow" onclick="window.location.href='backgrounds.php?lock=<?=$lockInv;?>';" value="!">
 <input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="X">
 </p>
 </div>
