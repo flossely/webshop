@@ -91,7 +91,15 @@ function set(name, content) {
 <body>
 <div class='top'>
 <p align="center">
-Choose the background and click on it to set it
+<select id='selectBack' onchange="set('background', selectBack.options[selectBack.selectedIndex].id);">
+<?php
+foreach ($list as $key=>$value) {
+    $backNameBase = basename($value, '.png');
+    $backNameDisp = str_replace('back.', '', $backNameBase);
+?>
+<option id="<?=$value;?>"><?=$backNameDisp;?></option>
+<?php } ?>
+</select>
 <input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="<">
 </p>
 </div>
