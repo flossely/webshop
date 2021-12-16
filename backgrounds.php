@@ -24,7 +24,7 @@ body {
     font-family: "ubuntu";
     font-size: 14pt;
 }
-input {
+input, select {
     background-color: #fff;
     color: #000;
     border: none;
