@@ -70,6 +70,17 @@ input, select {
 .actionButtonRed:hover {
     opacity: 0.7;
 }
+.actionButtonYellow {
+    background-color: #ddab00;
+    color: #fff;
+    font-size: 16pt;
+    width: 27px;
+    font-weight: bold;
+    position: relative;
+}
+.actionButtonYellow:hover {
+    opacity: 0.7;
+}
 </style>
 <script src="jquery.js"></script>
 <script src="base.js"></script>
@@ -101,7 +112,8 @@ foreach ($list as $key=>$value) {
 <option id="<?=$value;?>"><?=$backNameDisp;?></option>
 <?php } ?>
 </select>
-<input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="<">
+<input type="button" class="actionButtonYellow" onclick="set('background', '<?=$list[0];?>');" value="<">
+<input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="X">
 </p>
 </div>
 <div class='panel'>
