@@ -1,6 +1,7 @@
 <?php
 $background = file_get_contents('background');
 $dir = '.';
+$lock = ($_REQUEST['lock']) ? $_REQUEST['lock'] : 'true';
 $list = str_replace($dir.'/','',(glob($dir.'/back.*.png')));
 ?>
 <html>
@@ -106,10 +107,11 @@ foreach ($list as $key=>$value) {
 <div class='panel'>
 <p align="center">
 <?php
-foreach ($list as $key=>$value) {
+if ($lock == 'false') {
+    foreach ($list as $key=>$value) {
 ?>
 <img class="hover" style="height:15%;position:relative;" name="<?=$value;?>" title="<?=$value;?>" src="<?=$value;?>?rev=<?=time();?>" onclick="set('background', this.name);">
-<?php } ?>
+<?php }} ?>
 </p>
 </div>
 </body>
