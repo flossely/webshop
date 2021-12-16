@@ -35,7 +35,7 @@ if ($lock != 'true') {
 <input class="text" size=30 id="findbox" style="width:36%;" type="text" value="">
 <label> to </label>
 <input class="text" size=30 id="replacebox" style="width:36%;" type="text" value="">
-<input class="actionButtonGreen" type="button" value="Replace" id="replaceButton" onclick="replaceText(findbox.value); countText();">
+<input class="actionButtonGreen" type="button" value=">" id="replaceButton" onclick="replaceText(findbox.value); countText();">
 <br>
 <label id="statusBar" style="width:98%;"></label>
 </div>
