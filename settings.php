@@ -31,7 +31,7 @@ function set(name, content) {
 <div class='top'>
 <p align="center">
 Webshop Settings 
-<input type="button" class="actionButtonGreen" onclick="set('background', setBackField);" value=">">
+<input type="button" class="actionButtonGreen" onclick="set('background', setBackField.value);" value=">">
 <input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="X">
 </p>
 </div>
