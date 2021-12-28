@@ -38,7 +38,7 @@ Webshop Settings
 <div class='panel'>
 <p align="center">
 <label>Background image: </label>
-<input type='text' id='setBackField' placeholder="Filename or URL">
+<input type='text' id='setBackField' placeholder="Filename or URL" value="<?=$background;?>">
 </p>
 </div>
 </body>
