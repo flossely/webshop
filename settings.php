@@ -38,10 +38,10 @@ Webshop Settings
 <div class='panel'>
 <p align="center">
 <label>Background image: </label>
-<input type='text' id='setBackFieldHost' style="width:20%;position:relative;" placeholder="Filename or URL" value="<?=explode('/', $background)[2];?>">
-<input type='text' id='setBackFieldUser' style="width:20%;position:relative;" placeholder="Filename or URL" value="<?=explode('/', $background)[3];?>">
-<input type='text' id='setBackFieldRepo' style="width:20%;position:relative;" placeholder="Filename or URL" value="<?=explode('/', $background)[4];?>">
-<input type='text' id='setBackField' style="width:30%;position:relative;" placeholder="Filename or URL" value="<?=str_replace('back.', '', str_replace('.png?raw=true', '', explode('/', $background)[7]));?>">
+<input type='text' id='setBackFieldHost' style="width:18%;position:relative;" placeholder="Filename or URL" value="<?=explode('/', $background)[2];?>">
+<input type='text' id='setBackFieldUser' style="width:18%;position:relative;" placeholder="Filename or URL" value="<?=explode('/', $background)[3];?>">
+<input type='text' id='setBackFieldRepo' style="width:18%;position:relative;" placeholder="Filename or URL" value="<?=explode('/', $background)[4];?>">
+<input type='text' id='setBackField' style="width:18%;position:relative;" placeholder="Filename or URL" value="<?=str_replace('back.', '', str_replace('.png?raw=true', '', explode('/', $background)[7]));?>">
 </p>
 </div>
 </body>
