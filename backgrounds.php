@@ -54,9 +54,7 @@ foreach ($list as $key=>$value) {
 <?php if ($lock == 'false') { ?>
 <div class='panel'>
 <p align="center">
-<?php
-    foreach ($list as $key=>$value) {
-?>
+<?php foreach ($list as $key=>$value) { ?>
 <img class="hover" style="height:15%;position:relative;" name="<?=$value;?>" title="<?=$value;?>" src="<?=$value;?>?rev=<?=time();?>" onclick="set('background', this.name);">
 <?php } ?>
 </p>
