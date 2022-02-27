@@ -58,14 +58,24 @@ input, select, textarea {
     opacity: 0.7;
     position: relative;
 }
-.actionLineButton {
+.actionLineButtonBlue {
     background-color: #2264c8;
     color: #fff;
     font-size: 16pt;
     font-weight: bold;
     position: relative;
 }
-.actionLineButton:hover {
+.actionLineButtonBlue:hover {
+    opacity: 0.7;
+}
+.actionLineButtonGreen {
+    background-color: #009f4b;
+    color: #fff;
+    font-size: 16pt;
+    font-weight: bold;
+    position: relative;
+}
+.actionLineButtonGreen:hover {
     opacity: 0.7;
 }
 .actionButtonGreen {
