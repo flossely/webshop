@@ -41,9 +41,10 @@ function cutString($value, $piece) {
 <title>Nautilus</title>
 <link rel="shortcut icon" href="sys.files.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
-<script src="jquery.js"></script>
-<script src="base.js"></script>
-<script src="sort.js"></script>
+<script src="jquery.js?rev=<?=time();?>"></script>
+<script src="base.js?rev=<?=time();?>"></script>
+<script src="edit.js?rev=<?=time();?>"></script>
+<script src="sort.js?rev=<?=time();?>"></script>
 <script src="http://www.midijs.net/lib/midi.js"></script>
 <script>
 window.onload = function() {
