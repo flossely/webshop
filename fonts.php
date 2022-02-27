@@ -9,7 +9,7 @@ $name = $_REQUEST['name'];
 <title>Font Viewer</title>
 <link rel="shortcut icon" href="sys.fon.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
-<script src="wfunc.js?rev=<?=time();?>"></script>
+<?php include 'appscript.php'; ?>
 </head>
 <body>
 <div class='top'>

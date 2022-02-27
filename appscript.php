@@ -1,3 +1,4 @@
+<script>
 function mute(x) {
     if (x != '') {
         x = '';
@@ -34,3 +35,4 @@ function set(name, content) {
     });
     return false;
 }
+</script>

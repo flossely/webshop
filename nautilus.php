@@ -45,7 +45,7 @@ function cutString($value, $piece) {
 <script src="base.js?rev=<?=time();?>"></script>
 <script src="edit.js?rev=<?=time();?>"></script>
 <script src="sort.js?rev=<?=time();?>"></script>
-<script src="wfunc.js?rev=<?=time();?>"></script>
+<?php include 'appscript.php'; ?>
 <script src="http://www.midijs.net/lib/midi.js"></script>
 <script>
 window.onload = function() {

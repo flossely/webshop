@@ -9,7 +9,7 @@ $dir = '.';
 <title>Background Preview</title>
 <link rel="shortcut icon" href="sys.preview.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
-<script src="wfunc.js?rev=<?=time();?>"></script>
+<?php include 'appscript.php'; ?>
 </head>
 <body>
 <div class='top'>

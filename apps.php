@@ -12,7 +12,7 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
-<script src="wfunc.js?rev=<?=time();?>"></script>
+<?php include 'appscript.php'; ?>
 <script>
 window.onload = function() {
     document.getElementById('enterSeq').focus();
