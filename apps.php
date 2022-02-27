@@ -1,7 +1,7 @@
 <?php
 $background = file_get_contents('background');
 $dir = '.';
-$list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
+$list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 ?>
 <html>
 <head>
@@ -60,24 +60,15 @@ if (keyVal == 'i') {
 <p align="center">
 <?php
 foreach ($list as $key=>$value) {
-    $fileExt = pathinfo($value, PATHINFO_EXTENSION);
-    if ($fileExt == 'app') {
-        $fileContent = file_get_contents($value);
-        $fileExp = explode('=||=', $fileContent);
-        $fileTitle = $fileExp[0];
-        $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
-        $fileLink = $fileExp[2];
-    } elseif ($fileExt == 'pkg') {
-        $packageID = basename($value, '.pkg');
-        $fileTitle = 'Remove: '.$packageID;
-        $fileIcon = 'sys.pkg.png';
-        $fileLink = "get('d', '".$packageID."', 'from', 'here');";
-    }
-    
+    $fileContent = file_get_contents($value);
+    $fileExp = explode('=||=', $fileContent);
+    $fileTitle = $fileExp[0];
+    $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
+    $fileLink = $fileExp[2];
 ?>
 <img class='hover' style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class='hover' style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
+<img class='hover' style="height:15%;position:relative;" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
 </p>
 </div>
 </body>
