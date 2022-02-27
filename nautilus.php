@@ -153,15 +153,15 @@ foreach ($list as $key=>$value) {
             $icon = 'sys.pkg.png';
             $link = "javascript:get('d', '".$basename."', 'from', 'here');";
             $type = 'Package';
-        } elseif ($extension == 'app') {
+        } elseif ($extension == 'app' || $extension == 'uri') {
             $appOpen = file_get_contents($value);
             $appDel = explode('=||=', $appOpen);
             $appTitle = $appDel[0];
             $appIcon = $appDel[1];
             $appLink = $appDel[2];
-            $icon = (file_exists($appIcon)) ? $appIcon : 'sys.app.png';
+            $icon = (file_exists($appIcon)) ? $appIcon : 'sys.link.png';
             $link = "javascript:".$appLink.";";
-            $type = 'App Link';
+            $type = 'Link';
         } elseif ($extension == 'mid' || $extension == 'midi' || $extension == 'rmi') {
             $icon = 'sys.mid.png';
             $link = "javascript:playMIDI('".$dir.'/'.$value."');";

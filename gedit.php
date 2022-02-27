@@ -13,9 +13,9 @@ if ($lock != 'true') {
 <title>Text Editor</title>
 <link rel="shortcut icon" href="sys.edit.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
-<script src="jquery.js"></script>
-<script src="base.js"></script>
-<script src="edit.js"></script>
+<script src="jquery.js?rev=<?=time();?>"></script>
+<script src="base.js?rev=<?=time();?>"></script>
+<script src="edit.js?rev=<?=time();?>"></script>
 </head>
 <body onload="countText();">
 <div class='top'>

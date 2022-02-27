@@ -1,12 +1,14 @@
 <?php
 $background = file_get_contents('background');
+$dir = '.';
+$list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
 ?>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title>Webshop</title>
-<link rel="shortcut icon" href="favicon.png?rev=<?=time();?>" type="image/x-icon">
+<title>All Applications</title>
+<link rel="shortcut icon" href="sys.apps.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
@@ -56,11 +58,25 @@ if (keyVal == 'i') {
 </div>
 <div class='panel'>
 <p align="center">
-<img style="height:16%;position:relative;" src="favicon.png?rev=<?=time();?>">
-</p>
-<h1 align="center">Welcome to Webshop</h1>
-<p align="center">
-<input type='button' value='PROCEED' onclick="window.location.href = 'apps.php';">
+<?php
+foreach ($list as $key=>$value) {
+    $fileExt = pathinfo($value, PATHINFO_EXTENSION);
+    if ($fileExt == 'app') {
+        $fileContent = file_get_contents($value);
+        $fileExp = explode('=||=', $fileContent);
+        $fileTitle = $fileExp[0];
+        $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
+        $fileLink = $fileExp[2];
+    } elseif ($fileExt == 'pkg') {
+        $packageID = basename($value, '.pkg');
+        $fileTitle = 'Remove: '.$packageID;
+        $fileIcon = 'sys.pkg.png';
+        $fileLink = "get('d', '".$packageID."', 'from', 'here');";
+    }
+    
+?>
+<img class='hover' style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
+<?php } ?>
 </p>
 </div>
 </body>
