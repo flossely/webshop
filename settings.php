@@ -9,8 +9,8 @@ $dir = '.';
 <title>Webshop Settings</title>
 <link rel="shortcut icon" href="sys.settings.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
-<script src="jquery.js"></script>
-<script src="base.js"></script>
+<script src="jquery.js?rev=<?=time();?>"></script>
+<script src="base.js?rev=<?=time();?>"></script>
 <script>
 function set(name, content) {
     var dataString = 'name=' + name + '&content=' + content;
