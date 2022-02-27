@@ -8,7 +8,7 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.pkg')));
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <title>Installed Packages</title>
-<link rel="shortcut icon" href="sys.apps.png?rev=<?=time();?>" type="image/x-icon">
+<link rel="shortcut icon" href="sys.pkg.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
@@ -67,7 +67,7 @@ foreach ($list as $key=>$value) {
 ?>
 <img class='hover' style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class='hover' style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
+<img class='hover' style="height:15%;position:relative;" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
 </p>
 </div>
 </body>
