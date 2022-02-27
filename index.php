@@ -60,7 +60,7 @@ if (keyVal == 'i') {
 </p>
 <h1 align="center">Welcome to Webshop</h1>
 <p align="center">
-<input type='button' value='PROCEED' onclick="window.location.href = 'apps.php';">
+<input type='button' class='actionButton' value='PROCEED' onclick="window.location.href = 'apps.php';">
 </p>
 </div>
 </body>
