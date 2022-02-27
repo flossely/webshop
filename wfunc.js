@@ -14,12 +14,12 @@ function mute(x) {
     });
     return false;
 }
-function playAudio(player, name) {
-    player.src = name;
-    player.play();
+function playAudio(obj, name) {
+    obj.src = name + "?rev=<?=time();?>";
+    obj.play();
 }
-function pauseAudio(player) {
-    player.pause();
+function pauseAudio(obj) {
+    obj.pause();
 }
 function set(name, content) {
     var dataString = 'name=' + name + '&content=' + content;
