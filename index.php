@@ -61,7 +61,7 @@ if (keyVal == 'i') {
 <h1 align="center">Welcome to Webshop</h1>
 <p align="center">
 <input type='button' class='actionLineButtonGreen' value='Proceed' onclick="window.location.href = 'apps.php';">
-<input type='button' class='actionLineButtonBlue' value='Update' onclick="get('i','from','webshop','flossely');">
+<input type='button' class='actionLineButtonRed' value='Update' onclick="get('i','from','webshop','flossely');">
 </p>
 <p align="center">
 <img class='hover' style="height:15%;position:relative;" title="All Applications" src="sys.apps.png?rev=<?=time();?>" onclick="window.location.href = 'apps.php';">
