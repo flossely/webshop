@@ -72,5 +72,6 @@ foreach ($list as $key=>$value) {
 <img class='hover' onmouseover="playAudio(soundPlayer, 'alert.flac');" style="height:15%;position:relative;" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
 </p>
 </div>
+<audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
 </body>
 </html>
