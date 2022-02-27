@@ -62,7 +62,7 @@ input, select, textarea {
     background-color: #d83d48;
     color: #fff;
     font-size: 16pt;
-    font-weight: bold;
+    font-weight: normal;
     position: relative;
 }
 .actionLineButtonRed:hover {
@@ -72,7 +72,7 @@ input, select, textarea {
     background-color: #009f4b;
     color: #fff;
     font-size: 16pt;
-    font-weight: bold;
+    font-weight: normal;
     position: relative;
 }
 .actionLineButtonGreen:hover {
