@@ -1,5 +1,5 @@
 <?php
-$background = file_get_contents('background');
+include 'config.php';
 ?>
 <html>
 <head>
@@ -10,6 +10,7 @@ $background = file_get_contents('background');
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
+<script src="wfunc.js?rev=<?=time();?>"></script>
 <script>
 window.onload = function() {
     document.getElementById('enterSeq').focus();
@@ -23,8 +24,8 @@ window.onload = function() {
 <input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="" onkeydown="if (event.keyCode == 13) {
     seq(enterSeq.value);
 }">
-<input type="button" class="actionButtonGreen" onclick="seq(enterSeq.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href='?seq=no';" value="!">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="seq(enterSeq.value);" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href='?seq=no';" value="!">
 <?php } else { ?>
 <select id="enterKey" onchange="
 var curSys = getButton.name;
@@ -49,8 +50,8 @@ if (keyVal == 'i') {
 <input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
 <input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
 <input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href='?seq=yes';" value="!">
+<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value);" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href='?seq=yes';" value="!">
 <?php } ?>
 </p>
 </div>
@@ -60,15 +61,16 @@ if (keyVal == 'i') {
 </p>
 <h1 align="center">Welcome to Webshop</h1>
 <p align="center">
-<input type='button' class='actionLineButtonGreen' value='Proceed' onclick="window.location.href = 'apps.php';">
-<input type='button' class='actionLineButtonRed' value='Update' onclick="get('i','from','webshop','flossely');">
+<input type='button' class='actionLineButtonGreen' onmouseover="playAudio(soundPlayer, 'alert.flac');" value='Proceed' onclick="window.location.href = 'apps.php';">
+<input type='button' class='actionLineButtonRed' onmouseover="playAudio(soundPlayer, 'alert.flac');" value='Update' onclick="get('i','from','webshop','flossely');">
 </p>
 <p align="center">
-<img class='hover' style="height:15%;position:relative;" title="All Applications" src="sys.apps.png?rev=<?=time();?>" onclick="window.location.href = 'apps.php';">
-<img class='hover' style="height:15%;position:relative;" title="Installed Packages" src="sys.pkg.png?rev=<?=time();?>" onclick="window.location.href = 'packages.php';">
-<img class='hover' style="height:15%;position:relative;" title="Update Webshop" src="sys.upd.png?rev=<?=time();?>" onclick="get('i','from','webshop','flossely');">
-<img class='hover' style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
+<img class='hover' onmouseover="playAudio(soundPlayer, 'take.flac');" style="height:15%;position:relative;" title="All Applications" src="sys.apps.png?rev=<?=time();?>" onclick="window.location.href = 'apps.php';">
+<img class='hover' onmouseover="playAudio(soundPlayer, 'take.flac');" style="height:15%;position:relative;" title="Installed Packages" src="sys.pkg.png?rev=<?=time();?>" onclick="window.location.href = 'packages.php';">
+<img class='hover' onmouseover="playAudio(soundPlayer, 'take.flac');" style="height:15%;position:relative;" title="Update Webshop" src="sys.upd.png?rev=<?=time();?>" onclick="get('i','from','webshop','flossely');">
+<img class='hover' onmouseover="playAudio(soundPlayer, 'take.flac');" style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
 </p>
 </div>
+<audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
 </body>
 </html>

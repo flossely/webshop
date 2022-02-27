@@ -1,5 +1,5 @@
 <?php
-$background = file_get_contents('background');
+include 'config.php';
 $dir = '.';
 ?>
 <html>
@@ -11,28 +11,14 @@ $dir = '.';
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
-<script>
-function set(name, content) {
-    var dataString = 'name=' + name + '&content=' + content;
-    $.ajax({
-        type: "POST",
-        url: "write.php",
-        data: dataString,
-        cache: false,
-        success: function(html) {
-            window.location.reload();
-        }
-    });
-    return false;
-}
-</script>
+<script src="wfunc.js?rev=<?=time();?>"></script>
 </head>
 <body>
 <div class='top'>
 <p align="center">
 Webshop Settings 
-<input type="button" class="actionButtonGreen" onclick="set('background', setBackField.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="X">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="set('background', setBackField.value);" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href = 'index.php';" value="X">
 </p>
 </div>
 <div class='panel'>
@@ -43,5 +29,6 @@ Webshop Settings
 }"><?=$background;?></textarea>
 </p>
 </div>
+<audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
 </body>
 </html>

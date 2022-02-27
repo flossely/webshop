@@ -1,5 +1,5 @@
 <?php
-$background = file_get_contents('background');
+include 'config.php';
 $dir = '.';
 $lock = ($_REQUEST['lock']) ? $_REQUEST['lock'] : 'true';
 if ($lock == 'true') {
@@ -18,21 +18,7 @@ $list = str_replace($dir.'/','',(glob($dir.'/back.*.png')));
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
-<script>
-function set(name, content) {
-    var dataString = 'name=' + name + '&content=' + content;
-    $.ajax({
-        type: "POST",
-        url: "write.php",
-        data: dataString,
-        cache: false,
-        success: function(html) {
-            window.location.reload();
-        }
-    });
-    return false;
-}
-</script>
+<script src="wfunc.js?rev=<?=time();?>"></script>
 </head>
 <body>
 <div class='top'>
@@ -46,19 +32,20 @@ foreach ($list as $key=>$value) {
 <option id="<?=$value;?>"><?=$backNameDisp;?></option>
 <?php } ?>
 </select>
-<input type="button" class="actionButtonYellow" onclick="set('background', '<?=$list[0];?>');" value="<">
-<input type="button" class="actionButtonGreen" onclick="window.location.href='backgrounds.php?lock=<?=$lockInv;?>';" value="!">
-<input type="button" class="actionButtonRed" onclick="window.location.href = 'index.php';" value="X">
+<input type="button" class="actionButtonYellow" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="set('background', '<?=$list[0];?>');" value="<">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href='backgrounds.php?lock=<?=$lockInv;?>';" value="!">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac');" onclick="window.location.href = 'index.php';" value="X">
 </p>
 </div>
 <?php if ($lock == 'false') { ?>
 <div class='panel'>
 <p align="center">
 <?php foreach ($list as $key=>$value) { ?>
-<img class="hover" style="height:15%;position:relative;" name="<?=$value;?>" title="<?=$value;?>" src="<?=$value;?>?rev=<?=time();?>" onclick="set('background', this.name);">
+<img class="hover" onmouseover="playAudio(soundPlayer, 'take.flac');" style="height:15%;position:relative;" name="<?=$value;?>" title="<?=$value;?>" src="<?=$value;?>?rev=<?=time();?>" onclick="set('background', this.name);">
 <?php } ?>
 </p>
 </div>
 <?php } ?>
+<audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
 </body>
 </html>

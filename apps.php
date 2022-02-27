@@ -1,5 +1,5 @@
 <?php
-$background = file_get_contents('background');
+include 'config.php';
 $dir = '.';
 $list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 ?>
@@ -12,6 +12,7 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.app')));
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
+<script src="wfunc.js?rev=<?=time();?>"></script>
 <script>
 window.onload = function() {
     document.getElementById('enterSeq').focus();
@@ -25,8 +26,8 @@ window.onload = function() {
 <input id="enterSeq" type="text" style="width:72%;" placeholder="List the GET command sequences" value="" onkeydown="if (event.keyCode == 13) {
     seq(enterSeq.value);
 }">
-<input type="button" class="actionButtonGreen" onclick="seq(enterSeq.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href='?seq=no';" value="!">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="seq(enterSeq.value);" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href='?seq=no';" value="!">
 <?php } else { ?>
 <select id="enterKey" onchange="
 var curSys = getButton.name;
@@ -51,8 +52,8 @@ if (keyVal == 'i') {
 <input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
 <input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
 <input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value);" value=">">
-<input type="button" class="actionButtonRed" onclick="window.location.href='?seq=yes';" value="!">
+<input id='getButton' name="<?=file_get_contents('system.info');?>" type="button" onmouseover="playAudio(soundPlayer, 'take.flac');" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value);" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href='?seq=yes';" value="!">
 <?php } ?>
 </p>
 </div>
@@ -66,9 +67,9 @@ foreach ($list as $key=>$value) {
     $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
     $fileLink = $fileExp[2];
 ?>
-<img class='hover' style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
+<img class='hover' style="height:15%;position:relative;" title="<?=$fileTitle;?>" onmouseover="playAudio(soundPlayer, 'scroll.flac');" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class='hover' style="height:15%;position:relative;" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
+<img class='hover' onmouseover="playAudio(soundPlayer, 'alert.flac');" style="height:15%;position:relative;" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
 </p>
 </div>
 </body>
