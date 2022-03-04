@@ -22,7 +22,7 @@ Webshop Settings
 </div>
 <div class='panel'>
 <p align="center">
-<input type='button' id="muteSound" name="<?=$sounds;?>" value="<?php if ($sounds) { ?>Mute<?php } else { ?>Unmute<?php } ?>" onclick="mute(muteSound.name);">
+<input type='button' id="muteSound" onmouseover="playAudio(soundPlayer, 'take.flac');" name="<?=$sounds;?>" value="<?php if ($sounds) { ?>Mute<?php } else { ?>Unmute<?php } ?>" onclick="mute(muteSound.name);">
 </p>
 <p align="center">
 <label>Background image: </label><br>
