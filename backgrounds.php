@@ -18,7 +18,6 @@ $list = str_replace($dir.'/','',(glob($dir.'/back.*.png')));
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
-<?php include 'appscript.php'; ?>
 </head>
 <body>
 <div class='top'>

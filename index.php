@@ -10,7 +10,6 @@ include 'config.php';
 <?php include 'appstyle.php'; ?>
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
-<?php include 'appscript.php'; ?>
 <script>
 window.onload = function() {
     playAudio(soundPlayer, 'new.flac');

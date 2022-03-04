@@ -16,7 +16,6 @@ if ($lock != 'true') {
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
 <script src="edit.js?rev=<?=time();?>"></script>
-<?php include 'appscript.php'; ?>
 </head>
 <body onload="countText();">
 <div class='top'>

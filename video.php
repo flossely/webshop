@@ -9,7 +9,6 @@ $name = $_REQUEST['name'];
 <title>Watch Video</title>
 <link rel="shortcut icon" href="sys.vid.png?rev=<?=time();?>" type="image/x-icon">
 <?php include 'appstyle.php'; ?>
-<?php include 'appscript.php'; ?>
 </head>
 <body>
 <video style="width:100%;height:100%;" id="video" src="<?=$name;?>" controls autoplay="yes">

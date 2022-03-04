@@ -44,45 +44,12 @@ function cutString($value, $piece) {
 <script src="jquery.js?rev=<?=time();?>"></script>
 <script src="base.js?rev=<?=time();?>"></script>
 <script src="edit.js?rev=<?=time();?>"></script>
+<script src="file.js?rev=<?=time();?>"></script>
 <script src="sort.js?rev=<?=time();?>"></script>
-<?php include 'appscript.php'; ?>
 <script src="http://www.midijs.net/lib/midi.js"></script>
 <script>
 window.onload = function() {
     document.getElementById('search').focus();
-}
-function find() {
-    var dir = search.name;
-    var q = search.value;
-    if (window.XMLHttpRequest) {
-        xmlhttp=new XMLHttpRequest();
-    } else {
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function() {
-        if (this.readyState==4 && this.status==200) {
-            window.location.href = "nautilus.php?dir="+dir+"&q="+q;
-        }
-    }
-    xmlhttp.open("GET","nautilus.php?dir="+dir+"&q="+q,false);
-    xmlhttp.send();
-}
-function playMIDI(id) {
-    MIDIjs.play(id);
-}
-function pauseMIDI(id) {
-    MIDIjs.pause(id);
-}
-function levelUp(dir) {
-    if (dir.toString('').includes('/')) {
-        var split = dir.toString('').split('/');
-        var count = split.length;
-        var last = count - 1;
-        var link = dir.toString('').replace('/' + split[last], '');
-    } else {
-        var link = dir;
-    }
-    window.location.href = 'nautilus.php?dir=' + link;
 }
 </script>
 </head>
@@ -91,9 +58,9 @@ function levelUp(dir) {
 <p align="center">
 <input type="text" id="search" onkeydown="
 if (event.keyCode == 13) {
-    find();
+    fileSearch();
 }" style="width:60%;" name="<?=$dir;?>" placeholder="Enter the search query" value="">
-<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="find();" value=">">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="fileSearch();" value=">">
 <input type="button" class="actionButtonYellow" onmouseover="playAudio(soundPlayer, 'take.flac');" name="<?=$dir;?>" onclick="levelUp(this.name);" value="<">
 <input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac');" onclick="window.location.href = 'index.php';" value="X">
 </p>
