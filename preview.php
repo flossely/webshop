@@ -16,8 +16,8 @@ $dir = '.';
 <div class='top'>
 <p align="center">
 Background Preview
-<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" name="<?=$background;?>" onclick="window.location.href = this.name;" value=">">
-<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href = 'index.php';" value="<">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac?rev=<?=time();?>');" name="<?=$background;?>" onclick="window.location.href = this.name;" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="<">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>

@@ -16,7 +16,7 @@ $name = $_REQUEST['name'];
 <div class='top'>
 <p align="center">
 Font Preview: <?=$name;?> 
-<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac');" onclick="window.location.href = 'index.php';" value="<">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="<">
 </p>
 </div>
 <div class='panel'>

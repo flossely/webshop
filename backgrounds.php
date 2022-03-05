@@ -31,16 +31,16 @@ foreach ($list as $key=>$value) {
 <option id="<?=$value;?>"><?=$backNameDisp;?></option>
 <?php } ?>
 </select>
-<input type="button" class="actionButtonYellow" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="set('background', '<?=$list[0];?>');" value="<">
-<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac');" onclick="window.location.href='backgrounds.php?lock=<?=$lockInv;?>';" value="!">
-<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac');" onclick="window.location.href = 'index.php';" value="X">
+<input type="button" class="actionButtonYellow" onmouseover="playAudio(soundPlayer, 'take.flac?rev=<?=time();?>');" onclick="set('background', '<?=$list[0];?>');" value="<">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac?rev=<?=time();?>');" onclick="window.location.href='backgrounds.php?lock=<?=$lockInv;?>';" value="!">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="X">
 </p>
 </div>
 <?php if ($lock == 'false') { ?>
 <div class='panel'>
 <p align="center">
 <?php foreach ($list as $key=>$value) { ?>
-<img class="hover" onmouseover="playAudio(soundPlayer, 'take.flac');" style="height:15%;position:relative;" name="<?=$value;?>" title="<?=$value;?>" src="<?=$value;?>?rev=<?=time();?>" onclick="set('background', this.name);">
+<img class="hover" onmouseover="playAudio(soundPlayer, 'scroll.flac?rev=<?=time();?>');" style="height:15%;position:relative;" name="<?=$value;?>" title="<?=$value;?>" src="<?=$value;?>?rev=<?=time();?>" onclick="set('background', this.name);">
 <?php } ?>
 </p>
 </div>
