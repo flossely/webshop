@@ -52,7 +52,7 @@ if (keyVal == 'i') {
 <input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
 <input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
 <input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value); window.location.href = 'index.php';" value=">">
+<input id='getButton' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value, '', enterPkg.value, enterRepo.value, '', enterUser.value); window.location.href = 'index.php';" value=">">
 <input type="button" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" class="actionButtonRed" onclick="window.location.href='?seq=yes';" value="!">
 <?php } ?>
 </p>
@@ -64,7 +64,7 @@ foreach ($list as $key=>$value) {
     $packageID = basename($value, '.pkg');
     $fileTitle = 'Remove: '.$packageID;
     $fileIcon = 'sys.pkg.png';
-    $fileLink = "get('d', '".$packageID."', 'from', 'here');";
+    $fileLink = "get('d', '', '".$packageID."', 'from', '', 'here');";
 ?>
 <img class='hover' style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
