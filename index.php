@@ -67,7 +67,7 @@ if (keyVal == 'i') {
 <p align="center">
 <img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="All Applications" src="sys.apps.png?rev=<?=time();?>" onclick="window.location.href = 'apps.php';">
 <img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Installed Packages" src="sys.pkg.png?rev=<?=time();?>" onclick="window.location.href = 'packages.php';">
-<img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Update Webshop" src="sys.upd.png?rev=<?=time();?>" onclick="get('i','from','webshop','flossely');">
+<img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Update Webshop" src="sys.upd.png?rev=<?=time();?>" onclick="get('i','','from','webshop','','flossely');">
 <img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
 </p>
 </div>
