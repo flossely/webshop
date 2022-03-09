@@ -12,7 +12,7 @@ include 'config.php';
 <script src="base.js?rev=<?=time();?>"></script>
 <script>
 window.onload = function() {
-    playAudio(soundPlayer, "new.flac?rev=<?=time();?>");
+    playAudio(soundPlayer, "bootup.flac?rev=<?=time();?>");
     document.getElementById('enterSeq').focus();
 }
 </script>
