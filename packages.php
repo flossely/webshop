@@ -26,8 +26,8 @@ window.onload = function() {
     seq(enterSeq.value);
     window.location.href = 'index.php';
 }">
-<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'take.flac?rev=<?=time();?>');" onclick="seq(enterSeq.value); window.location.href = 'index.php';" value=">">
-<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'alert.flac?rev=<?=time();?>');" onclick="window.location.href='?seq=no';" value="!">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onclick="seq(enterSeq.value); window.location.href = 'index.php';" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onclick="window.location.href='?seq=no';" value="!">
 <?php } else { ?>
 <select id="enterKey" onchange="
 var curSys = getButton.name;
@@ -52,8 +52,8 @@ if (keyVal == 'i') {
 <input type="text" id="enterPkg" style="width:20%;" placeholder="Package" value="from">
 <input type="text" id="enterRepo" style="width:20%;" placeholder="Repo" value="">
 <input type="text" id="enterUser" style="width:20%;" placeholder="User" value="">
-<input id='getButton' onmouseover="playAudio(soundPlayer, 'take.flac?rev=<?=time();?>');" name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value); window.location.href = 'index.php';" value=">">
-<input type="button" onmouseover="playAudio(soundPlayer, 'alert.flac?rev=<?=time();?>');" class="actionButtonRed" onclick="window.location.href='?seq=yes';" value="!">
+<input id='getButton' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" name="<?=file_get_contents('system.info');?>" type="button" class="actionButtonGreen" onclick="get(enterKey.options[enterKey.selectedIndex].value,enterPkg.value,enterRepo.value,enterUser.value); window.location.href = 'index.php';" value=">">
+<input type="button" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" class="actionButtonRed" onclick="window.location.href='?seq=yes';" value="!">
 <?php } ?>
 </p>
 </div>
@@ -66,9 +66,9 @@ foreach ($list as $key=>$value) {
     $fileIcon = 'sys.pkg.png';
     $fileLink = "get('d', '".$packageID."', 'from', 'here');";
 ?>
-<img class='hover' style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'scroll.flac?rev=<?=time();?>');" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
+<img class='hover' style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class='hover' style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'alert.flac?rev=<?=time();?>');" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
+<img class='hover' style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Restart" src="sys.home.png?rev=<?=time();?>" onclick="window.location.href = 'index.php';">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
