@@ -125,6 +125,14 @@ foreach ($list as $key=>$value) {
             $icon = 'sys.fon.png';
             $link = "fonts.php?name=".$dir.'/'.$value;
             $type = 'Font';
+        } elseif ($extension == 'hfc' || $extension == 'hash') {
+            $icon = 'sys.wr.png';
+            $link = "javascript:hash('out', '".$dir.'/'.$value."');";
+            $type = 'Hash';
+        } elseif ($extension == 'b64' || $extension == 'base64') {
+            $icon = 'sys.console.png';
+            $link = "javascript:base64('out', '".$dir.'/'.$value."', '".$dir.'/'.$basename.".png');";
+            $type = 'Base64';
         } elseif ($extension == 'txt' || $extension == 'csv' || $extension == 'md') {
             $icon = 'sys.txt.png';
             $link = "gedit.php?name=".$dir.'/'.$value."&lock=true";
