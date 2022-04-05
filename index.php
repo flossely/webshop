@@ -1,5 +1,7 @@
 <?php
 include 'config.php';
+$dir = '.';
+$list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
 ?>
 <html>
 <head>
@@ -13,7 +15,6 @@ include 'config.php';
 <script>
 window.onload = function() {
     playAudio(soundPlayer, "bootup.flac?rev=<?=time();?>");
-    document.getElementById('enterSeq').focus();
 }
 </script>
 </head>
@@ -25,18 +26,26 @@ window.onload = function() {
 </div>
 <div class='panel'>
 <p align="center">
-<img style="height:16%;position:relative;" src="favicon.png?rev=<?=time();?>">
-</p>
-<h1 align="center">Welcome to Webshop</h1>
-<p align="center">
-<input type='button' class='actionLineButtonGreen' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" value='Proceed' onclick="window.location.href = 'apps.php';">
-<input type='button' class='actionLineButtonRed' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" value='Update' onclick="get('i','','from','webshop','','flossely');">
-</p>
-<p align="center">
-<img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="All Applications" src="sys.apps.png?rev=<?=time();?>" onclick="window.location.href = 'apps.php';">
-<img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Installed Packages" src="sys.pkg.png?rev=<?=time();?>" onclick="window.location.href = 'packages.php';">
-<img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Update Webshop" src="sys.upd.png?rev=<?=time();?>" onclick="get('i','','from','webshop','','flossely');">
-<img class='hover' onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" style="height:15%;position:relative;" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
+<?php
+foreach ($list as $key=>$value) {
+    $fileExt = pathinfo($value, PATHINFO_EXTENSION);
+    if ($fileExt == 'app') {
+        $fileContent = file_get_contents($value);
+        $fileExp = explode('=||=', $fileContent);
+        $fileTitle = $fileExp[0];
+        $fileIcon = (file_exists($fileExp[1])) ? $fileExp[1] : 'sys.app.png';
+        $fileLink = $fileExp[2];
+    } elseif ($fileExt == 'pkg') {
+        $packageID = basename($value, '.pkg');
+        $fileTitle = 'Remove: '.$packageID;
+        $fileIcon = 'sys.pkg.png';
+        $fileLink = "get('d', '', '".$packageID."', 'from', '', 'here');";
+    }
+    
+?>
+<img class="hover" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onclick="<?=$fileLink;?>">
+<?php } ?>
+<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
