@@ -78,6 +78,17 @@ input, select, textarea {
 .actionLineButtonGreen:hover {
     opacity: 0.7;
 }
+.actionButton {
+    background-color: #009f4b;
+    color: #fff;
+    font-size: 16pt;
+    width: 27px;
+    font-weight: bold;
+    position: relative;
+}
+.actionButton:hover {
+    opacity: 0.7;
+}
 .actionButtonGreen {
     background-color: #009f4b;
     color: #fff;
