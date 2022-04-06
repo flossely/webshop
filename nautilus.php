@@ -160,8 +160,8 @@ foreach ($list as $key=>$value) {
 <?=$perms;?>
 </td>
 <td>
-<img width="40%" src="sys.edit.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onmouseover="playAudio(soundPlayer, 'take.flac');" title="Edit" name="<?=$dir.'/'.$value;?>"  onclick="window.location.href = 'gedit.php?name=' + this.name + '&lock=true';">
-<img width="40%" src="sys.rm.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onmouseover="playAudio(soundPlayer, 'alert.flac');" title="Delete" name="<?=$dir.'/'.$value;?>" onclick="del(this.name);">
+<img width="40%" src="sys.edit.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Edit" name="<?=$dir.'/'.$value;?>"  onclick="window.location.href = 'gedit.php?name=' + this.name + '&lock=true';">
+<img width="40%" src="sys.rm.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Delete" name="<?=$dir.'/'.$value;?>" onclick="del(this.name);">
 </td>
 </tr>
 <?php } ?>
