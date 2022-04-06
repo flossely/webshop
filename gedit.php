@@ -20,14 +20,14 @@ if ($lock != 'true') {
 </head>
 <body onload="countText();">
 <div class='top'>
-<img class="actionIcon" src="sys.cl.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="New File" id="newButton" onclick="var name = 'file'; window.location.href = 'gedit.php?name=' + name + '&lock=false';">
-<img class="actionIcon" src="sys.rd.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Open File" id="openButton" onclick="var name = filename.value; window.location.href = 'gedit.php?name=' + name;">
-<img class="actionIcon" src="sys.wr.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Save File" id="saveButton" onclick="save();">
-<img class="actionIcon" src="sys.md.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Create Directory" id="mkdirButton" onclick="var name = filename.value; mkdir(name);">
-<img class="actionIcon" src="sys.mv.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Move/Rename File" id="moveButton" onclick="var name = filename.value; var to = doto.value; move(name, to);">
-<img class="actionIcon" src="sys.cp.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Copy File" id="copyButton" onclick="var name = filename.value; var to = doto.value; copy(name, to);">
-<img class="actionIcon" src="sys.rm.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Delete File" id="deleteButton" onclick="var name = filename.value; del(name);">
-<img class="actionIcon" src="sys.home.png" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Go Home" id="homeButton" onclick="window.location.href = 'index.php';"><br>
+<img class="actionIcon" src="sys.cl.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="New File" id="newButton" onclick="var name = 'file'; window.location.href = 'gedit.php?name=' + name + '&lock=false';">
+<img class="actionIcon" src="sys.rd.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Open File" id="openButton" onclick="var name = filename.value; window.location.href = 'gedit.php?name=' + name;">
+<img class="actionIcon" src="sys.wr.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Save File" id="saveButton" onclick="save();">
+<img class="actionIcon" src="sys.md.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Create Directory" id="mkdirButton" onclick="var name = filename.value; mkdir(name);">
+<img class="actionIcon" src="sys.mv.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Move/Rename File" id="moveButton" onclick="var name = filename.value; var to = doto.value; move(name, to);">
+<img class="actionIcon" src="sys.cp.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Copy File" id="copyButton" onclick="var name = filename.value; var to = doto.value; copy(name, to);">
+<img class="actionIcon" src="sys.rm.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Delete File" id="deleteButton" onclick="var name = filename.value; del(name);">
+<img class="actionIcon" src="sys.home.png?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Go Home" id="homeButton" onclick="window.location.href = 'index.php';"><br>
 </div>
 <div class='panel'>
 <label>Filename: </label>
