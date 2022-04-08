@@ -1,1 +1,1 @@
-Fonts=||=sys.fon.png=||=window.location.href='nautilus.php?q=.ttf,.otf,.ttc';
+Fonts|[1]|sys.fon.png|[1]|window.location.href='nautilus.php?q=.ttf,.otf,.ttc';

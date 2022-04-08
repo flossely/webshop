@@ -1,1 +1,1 @@
-Rhythmbox=||=sys.aud.png=||=window.location.href='nautilus.php?q=.mp3,.aac,.flac';
+Rhythmbox|[1]|sys.aud.png|[1]|window.location.href='nautilus.php?q=.mp3,.aac,.flac';

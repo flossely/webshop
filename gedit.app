@@ -1,1 +1,1 @@
-Text Editor=||=sys.edit.png=||=window.location.href='gedit.php?name=file';
+Text Editor|[1]|sys.edit.png|[1]|window.location.href='gedit.php?name=file';

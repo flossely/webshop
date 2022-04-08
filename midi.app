@@ -1,1 +1,1 @@
-Timidity=||=sys.mid.png=||=window.location.href='nautilus.php?q=.mid,.midi,.rmi';
+Timidity|[1]|sys.mid.png|[1]|window.location.href='nautilus.php?q=.mid,.midi,.rmi';

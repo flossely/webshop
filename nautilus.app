@@ -1,1 +1,1 @@
-Files=||=sys.files.png=||=window.location.href='nautilus.php';
+Files|[1]|sys.files.png|[1]|window.location.href='nautilus.php';

@@ -1,1 +1,1 @@
-Books=||=sys.book.png=||=window.location.href='nautilus.php?q=.pdf';
+Books|[1]|sys.book.png|[1]|window.location.href='nautilus.php?q=.pdf';

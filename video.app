@@ -1,1 +1,1 @@
-Totem=||=sys.vid.png=||=window.location.href='nautilus.php?q=.mp4,.mkv,.webm';
+Totem|[1]|sys.vid.png|[1]|window.location.href='nautilus.php?q=.mp4,.mkv,.webm';

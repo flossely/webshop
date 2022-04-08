@@ -102,7 +102,7 @@ foreach ($list as $key=>$value) {
             $type = 'Package';
         } elseif ($extension == 'app' || $extension == 'uri') {
             $appOpen = file_get_contents($value);
-            $appDel = explode('=||=', $appOpen);
+            $appDel = explode('|[1]|', $appOpen);
             $appTitle = $appDel[0];
             $appIcon = $appDel[1];
             $appLink = $appDel[2];
