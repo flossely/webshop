@@ -1,7 +1,8 @@
 <?php
-include 'config.php';
 $dir = '.';
 $lock = ($_REQUEST['lock']) ? $_REQUEST['lock'] : 'true';
+$background = file_get_contents('background');
+include 'syspkg.php';
 if ($lock == 'true') {
     $lockInv = 'false';
 } elseif ($lock == 'false') {

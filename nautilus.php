@@ -1,5 +1,6 @@
 <?php
-include 'config.php';
+$background = file_get_contents('background');
+include 'syspkg.php';
 $dir = ($_REQUEST['dir']) ? $_REQUEST['dir'] : '.';
 if ($_REQUEST) {
     $q = $_REQUEST['q'];
