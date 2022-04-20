@@ -15,7 +15,7 @@ $list = str_replace($dir.'/','',(glob($dir.'/*.{app,pkg}', GLOB_BRACE)));
 <script src="base.js?rev=<?=time();?>"></script>
 <script>
 window.onload = function() {
-    playAudio(soundPlayer, "bootup.flac?rev=<?=time();?>");
+    playAudio(soundPlayer, "snd.bootup.flac?rev=<?=time();?>");
 }
 </script>
 </head>
@@ -44,9 +44,9 @@ foreach ($list as $key=>$value) {
     }
     
 ?>
-<img class="hover" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onclick="<?=$fileLink;?>">
+<img class="hover" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
+<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>

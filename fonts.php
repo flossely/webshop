@@ -17,7 +17,7 @@ include 'syspkg.php';
 <div class='top'>
 <p align="center">
 Font Preview: <?=$name;?> 
-<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="<">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="<">
 </p>
 </div>
 <div class='panel'>

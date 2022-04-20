@@ -17,8 +17,8 @@ include 'syspkg.php';
 <div class='top'>
 <p align="center">
 Background Preview
-<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" name="<?=$background;?>" onclick="window.location.href = this.name;" value=">">
-<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, 'default.flac?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="<">
+<input type="button" class="actionButtonGreen" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" name="<?=$background;?>" onclick="window.location.href = this.name;" value=">">
+<input type="button" class="actionButtonRed" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" onclick="window.location.href = 'index.php';" value="<">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
