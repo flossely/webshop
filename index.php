@@ -1,6 +1,6 @@
 <?php
 $dir = '.';
-if (file_get_contents('name')) {
+if (file_exists('name')) {
     $projectTitleFile = file_get_contents('name');
     if ($projectTitleFile != '') {
         $projectTitle = $projectTitleFile;
@@ -55,7 +55,7 @@ foreach ($list as $key=>$value) {
 ?>
 <img class="hover" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href = '../';">
+<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="get('r','','webshop','hsis','','flossely',false);">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
