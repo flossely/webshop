@@ -5,10 +5,10 @@ if (file_exists('name')) {
     if ($projectTitleFile != '') {
         $projectTitle = $projectTitleFile;
     } else {
-        $projectTitle = 'macOS Web';
+        $projectTitle = 'Webshop';
     }
 } else {
-    $projectTitle = 'macOS Web';
+    $projectTitle = 'Webshop';
 }
 $background = file_get_contents('background');
 include 'syspkg.php';
@@ -55,7 +55,7 @@ foreach ($list as $key=>$value) {
 ?>
 <img class="hover" style="height:15%;position:relative;" title="<?=$fileTitle;?>" src="<?=$fileIcon;?>?rev=<?=time();?>" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" onclick="<?=$fileLink;?>">
 <?php } ?>
-<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="get('r','','webshop','hsis','','flossely',false);">
+<img class="hover" style="height:15%;position:relative;" onmouseover="playAudio(soundPlayer, '<?=$soundlib[rand(0,$soundct)];?>?rev=<?=time();?>');" title="Exit" src="sys.exit.png?rev=<?=time();?>" onclick="window.location.href='../';">
 </p>
 </div>
 <audio id="soundPlayer" <?php if (!$sounds) { ?>muted="muted"<?php } ?>>
